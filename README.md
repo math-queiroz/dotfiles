@@ -1,2 +1,2 @@
-# dotfiles
+# math-queiroz's dotfiles
 ...
