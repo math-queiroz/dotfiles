@@ -1,10 +1,6 @@
 # Nushell Config File
 # version = "0.100.0"
 
-# Quick Import on Windows
-# http get https://raw.githubusercontent.com/math-queiroz/dotfiles/refs/heads/main/nushell/config.nu | save -f ($env.APPDATA + /nushell/config.nu)
-# http get https://raw.githubusercontent.com/math-queiroz/dotfiles/refs/heads/main/nushell/env.nu | save -f ($env.APPDATA + /nushell/env.nu)
-
 # Themes
 let dark_theme = {
     separator: white
@@ -883,5 +879,5 @@ alias kl = kubectl logs
 alias kgp = kubectl get pod
 alias kgd = kubectl get deployments
 alias keit = kubectl exec -it
-alias kc = kubectx
-alias kns = kubens
+alias kuc = kubectl config use-context
+alias kcc = kubectl config current-context
