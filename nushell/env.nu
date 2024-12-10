@@ -4,9 +4,9 @@
 # Prompts (left and right)
 def create_left_prompt [] {
     let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
-        null => $env.PWD
+        null => ($env.PWD | path basename)
         '' => '~'
-        $relative_pwd => ([~ $relative_pwd] | path join)
+        $relative_pwd => ($relative_pwd | path basename)
     }
 
     let path_color = (if (is-admin) { ansi red_bold } else { ansi green_bold })
@@ -20,9 +20,9 @@ def create_right_prompt [] {
     # create a right prompt in magenta with green separators and am/pm underlined
     let time_segment = ([
         (ansi reset)
-        (ansi magenta)
+        (ansi blue)
         (date now | format date '%x %X') # try to respect user's locale
-    ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi magenta)" |
+    ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi blue)" |
         str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
 
     let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
