@@ -850,6 +850,9 @@ $env.config = {
     ]
 }
 
+# Local files
+source ./local.nu
+
 # Carapace (completion for cobra based CLIs)
 source ~/.cache/carapace/init.nu
 
