@@ -98,6 +98,8 @@ $env.NU_PLUGIN_DIRS = [
 # source ($nu.default-config-dir | path join 'custom.nu')
 
 # Carapace (completion for cobra based CLIs)
-$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+if ((which carapace | length) > 0) {
+    $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+    mkdir ~/.cache/carapace
+    carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+}
