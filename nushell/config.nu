@@ -851,10 +851,14 @@ $env.config = {
 }
 
 # Local files
-source ./local.nu
+if ('./local.nu' | path exists) {
+    source ./local.nu
+}
 
 # Carapace (completion for cobra based CLIs)
-source ~/.cache/carapace/init.nu
+if ('~/.cache/carapace/init.nu' | path exists) {
+    source ~/.cache/carapace/init.nu
+}
 
 # Aliases
 alias ll = ls -l
