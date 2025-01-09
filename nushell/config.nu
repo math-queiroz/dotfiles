@@ -866,7 +866,9 @@ alias vi = nvim
 alias vim = nvim
 
 # Git
+alias g = git
 alias gc = git commit -m
+alias gb = git branch
 alias gca = git commit -a -m
 alias gpu = git push origin HEAD
 alias gpl = git pull origin
