@@ -17,25 +17,14 @@ def create_left_prompt [] {
 }
 
 def create_right_prompt [] {
-    # create a right prompt in magenta with green separators and am/pm underlined
-    let time_segment = ([
-        (ansi reset)
-        (ansi blue)
-        (date now | format date '%x %X') # try to respect user's locale
-    ] | str join | str replace --regex --all "([/:])" $"(ansi green)${1}(ansi blue)" |
-        str replace --regex --all "([AP]M)" $"(ansi magenta_underline)${1}")
-
-    let last_exit_code = if ($env.LAST_EXIT_CODE != 0) {([
-        (ansi rb)
-        ($env.LAST_EXIT_CODE)
-    ] | str join)
-    } else { "" }
-
-    ([$last_exit_code, (char space), $time_segment] | str join)
+    if (which kubectl | is-empty) { return "" }
+    if not ("~/.kube/config" | path exists) { return "" }
+    let c = open ~/.kube/config | find "current-context: "
+    if ($c | is-not-empty) { (ansi yellow) + "[" + ($c | str substring 43..-5).0 + "]" }
 }
 
 $env.PROMPT_COMMAND = {|| create_left_prompt }
-$env.PROMPT_COMMAND_RIGHT = {|| }
+$env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
 
 # Prompt Indicators
 $env.PROMPT_INDICATOR = {|| "> " }
