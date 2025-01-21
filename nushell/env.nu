@@ -3,7 +3,7 @@
 
 # Prompts (left and right)
 def create_left_prompt [] {
-    let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
+    let dir = match (do -i { $env.PWD | path relative-to $nu.home-path }) {
         null => ($env.PWD | path basename)
         '' => '~'
         $relative_pwd => ($relative_pwd | path basename)
