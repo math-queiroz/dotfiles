@@ -1,3 +1,7 @@
 nushell/local.nu
 nushell/login.nu
 nushell/history.txt
+
+k9s/clusters/*
+k9s/screen-dumps/*
+k9s/k9s.log
