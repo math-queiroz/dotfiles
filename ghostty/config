@@ -1,2 +1,10 @@
+gtk-titlebar=false
 font-size=10
+window-padding-x=4
+window-padding-y=4
+
 background=#222226
+background-opacity=0.8
+background-blur=true
+
+keybind=f11=fullscreen
