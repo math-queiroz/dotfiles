@@ -6,5 +6,3 @@ window-padding-y=4
 background=#222226
 background-opacity=0.8
 background-blur=true
-
-keybind=f11=fullscreen
