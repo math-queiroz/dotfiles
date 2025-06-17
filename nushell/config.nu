@@ -875,6 +875,8 @@ alias gdiff = git diff
 alias gchk = git checkout
 alias gadd = git add
 
+alias lg = lazygit
+
 # K8s
 alias k = kubectl
 alias ka = kubectl apply -f
