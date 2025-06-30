@@ -93,3 +93,6 @@ if ((which carapace | length) > 0) {
     mkdir ~/.cache/carapace
     carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 }
+
+$env.EDITOR = "nvim"
+$env.GOPATH = "~/.go"
