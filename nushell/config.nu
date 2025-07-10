@@ -889,3 +889,5 @@ alias kgd = kubectl get deployments
 alias keit = kubectl exec -it
 alias kuc = kubectl config use-context
 alias kcc = kubectl config current-context
+
+alias kmc = bash -c 'KUBECONFIG="$(pwd)/kubeconfig.yaml:/home/math-queiroz/.kube/config" kubectl config view --flatten'
