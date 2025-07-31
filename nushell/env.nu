@@ -18,7 +18,7 @@ def create_left_prompt [] {
 
 def create_right_prompt [] {
     if (which kubectl | is-empty) { return "" }
-    let configPath = ($env | get --ignore-errors KUBECONFIG | default $"($env.HOME)/.kube/config")
+    let configPath = ($env | get -o KUBECONFIG | default $"($env.HOME)/.kube/config")
     if not ($configPath | path exists) { return "" }
     let c = open --raw $configPath | find "current-context: "
     if ($c | is-not-empty) { (ansi yellow) + "[" + ($c | str substring 43..-5).0 + "]" }
