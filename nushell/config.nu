@@ -861,6 +861,7 @@ if ('~/.cache/carapace/init.nu' | path exists) {
 alias ll = ls -l
 alias vi = nvim
 alias vim = nvim
+alias lc = leetcode
 
 # Git
 alias g = git
@@ -875,7 +876,8 @@ alias gdiff = git diff
 alias gchk = git checkout
 alias gadd = git add
 
-alias lg = lazygit
+alias lzg = lazygit
+alias lzd = lazydocker
 
 # K8s
 alias k = kubectl
@@ -891,3 +893,4 @@ alias kuc = kubectl config use-context
 alias kcc = kubectl config current-context
 
 alias kmc = bash -c 'KUBECONFIG="$(pwd)/kubeconfig.yaml:/home/math-queiroz/.kube/config" kubectl config view --flatten'
+source $"($nu.home-path)/.cargo/env.nu"
