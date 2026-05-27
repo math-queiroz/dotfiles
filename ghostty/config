@@ -1,3 +1,5 @@
+custom-shader = cursor_warp.glsl
+
 gtk-titlebar=false
 font-size=9
 window-padding-x=4
