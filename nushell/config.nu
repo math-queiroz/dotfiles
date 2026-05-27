@@ -893,4 +893,4 @@ alias kuc = kubectl config use-context
 alias kcc = kubectl config current-context
 
 alias kmc = bash -c 'KUBECONFIG="$(pwd)/kubeconfig.yaml:/home/math-queiroz/.kube/config" kubectl config view --flatten'
-source $"($nu.home-path)/.cargo/env.nu"
+source $"($nu.home-dir)/.cargo/env.nu"
