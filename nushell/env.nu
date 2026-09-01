@@ -95,7 +95,6 @@ if ((which carapace | length) > 0) {
 }
 
 $env.EDITOR = "nvim"
-$env.GOPATH = "~/.go"
 
 # Fix dir contrast
 if ("LS_COLORS" in $env) {

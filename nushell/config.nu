@@ -848,8 +848,8 @@ $env.config = {
 }
 
 # Local files
-if ('./local.nu' | path exists) {
-    source ./local.nu
+if ('~/.config/nushell/local.nu' | path exists) {
+    source ~/.config/nushell/local.nu
 }
 
 # Carapace (completion for cobra based CLIs)
